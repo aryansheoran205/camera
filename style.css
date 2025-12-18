@@ -1,0 +1,42 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page styling */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Button styling */
+.center-button {
+    padding: 16px 45px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #111;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.center-button:hover {
+    background: white;
+    color: #111;
+    transform: translateY(-4px);
+}
+
+/* Click effect */
+.center-button:active {
+    transform: scale(0.95);
+}

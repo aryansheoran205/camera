@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Camera Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div style="text-align:center">
+    <button class="center-button" onclick="toggleCamera()">Switch</button>
+    <br><br>
+    <button class="center-button" onclick="captureImage()">Capture</button>
+    <br><br>
+
+    <img id="video" width="420" />
+  </div>
+
+  <script>
+    function toggleCamera() {
+      fetch("http://192.168.1.2:8000/switch")
+        .then(res => res.json())
+        .then(data => {
+          alert(data.message);
+
+          if (data.message === "Camera ON") {
+            document.getElementById("video").src =
+              "http://192.168.1.2:8000/stream";
+          } else {
+            document.getElementById("video").src = "";
+          }
+        });
+    }
+
+    function captureImage() {
+      fetch("http://192.168.1.2:8000/capture")
+        .then(res => res.json())
+        .then(data => {
+          alert(data.message);
+        });
+    }
+  </script>
+
+</body>
+</html>
